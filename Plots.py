@@ -6,7 +6,7 @@ print('Imports OK')
 n = 100
 x = np.arange(0, n+1)
 x
-``
+
 
 inf = 0.5
 sup = 1.5
@@ -34,3 +34,13 @@ plt.legend(handles = [limiteSupMedioCaso, piorMedioCaso, limiteInfMedioCaso, lim
 
 
 plt.title('Shell Sort Complexidade')
+#The best case ∊ Theta(nlogn):
+#The worst case ∊ theta(n*(logn)^2):
+#The avg case ∊ theta(n*(logn)^2):
+
+limiteInfMedioPiorCaso, = plt.plot(x, 0.5*inf*(x*(np.log10(x)**2)), 'b-', label = 'Limite Inferior Medio e Pior caso')
+limiteSupMedioPiorCaso, = plt.plot(x, sup*(x*(np.log10(x)**2)), 'g-', label = 'Limite Superior Medio e Pior caso')
+melhorCaso, = plt.plot(x, (x*np.log10(x)), 'r-', label = 'Melhor Caso')
+plt.legend(handles = [limiteInfMedioPiorCaso, limiteSupMedioPiorCaso, melhorCaso])
+
+
