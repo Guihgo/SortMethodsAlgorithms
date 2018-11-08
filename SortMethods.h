@@ -205,11 +205,7 @@ void quickSort(int arr[], int menor, int maior)
 { 
     if (menor < maior) 
     { 
-        /* pi is partitioning index, arr[p] is now 
-           at right place */
         int partIndex = partition(arr, menor, maior); 
-        // Separately sort elements before 
-        // partition and after partition 
         quickSort(arr, menor, partIndex - 1); 
         quickSort(arr, partIndex + 1, maior--); 
     } 

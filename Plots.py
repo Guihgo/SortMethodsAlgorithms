@@ -17,6 +17,7 @@ limiteInfMelhorMedioCaso, = plt.plot(x, inf*x**2, 'lightgreen', label = 'Limite 
 plt.legend(handles = [PiorMedioMelhorCaso, limiteSupMedioCaso, limiteInfMelhorMedioCaso])
 
 
+
 plt.title('Complexidade Insertion Sort')
 piorMedioCaso, = plt.plot(x, x**2, 'b-', label = 'Pior e Medio Caso')
 melhorCaso, = plt.plot(x,x,'r-', label = 'Melhor Caso')
