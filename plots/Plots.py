@@ -3,6 +3,10 @@ import matplotlib
 import numpy as np
 print('Imports OK')
 
+#FONTE PARA OS PLOTS DE COMPLEXIDADE
+
+#http://bigocheatsheet.com/
+
 ##IMPORTANTE
 #COLOCAR ESSE N COM BASE NO TAMANHO DO VETOR INFORMADO PELO USUARIO
 n = 1000
@@ -19,7 +23,7 @@ limiteInfMelhorMedioCaso, = plt.plot(x, inf*x**2, 'lightgreen', label = 'Limite 
 plt.legend(handles = [PiorMedioMelhorCaso, limiteSupMedioCaso, limiteInfMelhorMedioCaso])
 plt.xlabel('Numero de Entradas')
 plt.ylabel('Operacoes Realizadas')
-plt.savefig('/Users/joaomarcelo/Desktop/temp/SelectionSortComplexity.pdf', format = 'pdf')
+plt.savefig('/Users/joaomarcelo/Desktop/temp/SelectionSortComplexity.pdf', format = 'pdf', bbox_inches='tight')
 
 
 plt.title('Complexidade Insertion Sort')
@@ -30,7 +34,7 @@ limiteSupMedioCaso, = plt.plot(x, sup*x**2, 'g-', label = 'Limite Superior do Me
 plt.legend(handles = [limiteSupMedioCaso, piorMedioCaso,limiteInfMelhorMedioCaso, melhorCaso])
 plt.xlabel('Numero de Entradas')
 plt.ylabel('Operacoes Realizadas')
-plt.savefig('/Users/joaomarcelo/Desktop/temp/InsertionSortComplexity.pdf', format = 'pdf')
+plt.savefig('/Users/joaomarcelo/Desktop/temp/InsertionSortComplexity.pdf', format = 'pdf', bbox_inches='tight')
 
 
 plt.title('Bubble Sort Complexidade')
@@ -41,7 +45,7 @@ piorMedioCaso, = plt.plot(x, x**2, 'lightgreen', label = 'Pior e Medio caso')
 plt.legend(handles = [limiteSupMedioCaso, piorMedioCaso, limiteInfMedioCaso, limiteInfMelhorCaso])
 plt.xlabel('Numero de Entradas')
 plt.ylabel('Operacoes Realizadas')
-plt.savefig('/Users/joaomarcelo/Desktop/temp/BubbleSortComplexity.pdf', format = 'pdf')
+plt.savefig('/Users/joaomarcelo/Desktop/temp/BubbleSortComplexity.pdf', format = 'pdf', bbox_inches='tight')
 
 
 
@@ -55,7 +59,7 @@ melhorCaso, = plt.plot(x, (x*np.log10(x)), 'r-', label = 'Melhor Caso')
 plt.legend(handles = [limiteInfMedioPiorCaso, limiteSupMedioPiorCaso, melhorCaso])
 plt.xlabel('Numero de Entradas')
 plt.ylabel('Operacoes Realizadas')
-plt.savefig('/Users/joaomarcelo/Desktop/temp/ShellSortComplexity.pdf', format = 'pdf')
+plt.savefig('/Users/joaomarcelo/Desktop/temp/ShellSortComplexity.pdf', format = 'pdf', bbox_inches='tight')
 
 
 
@@ -71,7 +75,7 @@ piorCaso, = plt.plot(x, x*np.log10(x), 'r-', label = 'Pior Caso')
 plt.legend(handles = [limiteInfMedioMelhorCaso, limiteSupMedioCaso, piorCaso])
 plt.xlabel('Numero de Entradas')
 plt.ylabel('Operacoes Realizadas')
-plt.savefig('/Users/joaomarcelo/Desktop/temp/MergeSortComplexity.pdf', format = 'pdf')
+plt.savefig('/Users/joaomarcelo/Desktop/temp/MergeSortComplexity.pdf', format = 'pdf', bbox_inches='tight')
 
 
 plt.title('Quick Sort Complexidade')
@@ -81,7 +85,7 @@ piorCaso, = plt.plot(x, x**2, 'r-', label = 'Pior Caso')
 plt.legend(handles = [limiteInfMedioMelhorCaso, limiteSupMedioCaso, piorCaso])
 plt.xlabel('Numero de Entradas')
 plt.ylabel('Operacoes Realizadas')
-plt.savefig('/Users/joaomarcelo/Desktop/temp/QuickSortComplexity.pdf', format = 'pdf')
+plt.savefig('/Users/joaomarcelo/Desktop/temp/QuickSortComplexity.pdf', format = 'pdf', bbox_inches='tight')
 
 #Cocktail Shaker sort Complexity 
 # avg and worst case O(n^2)
@@ -93,4 +97,4 @@ MelhorCaso, = plt.plot(x, x, 'g-', label = 'Melhor Caso')
 plt.legend(handles = [MedioEPiorCaso, MelhorCaso])
 plt.xlabel('Numero de Entradas')
 plt.ylabel('Operacoes Realizadas')
-plt.savefig('/Users/joaomarcelo/Desktop/temp/CocktailShakerSortComplexity.pdf', format = 'pdf')
+plt.savefig('/Users/joaomarcelo/Desktop/temp/CocktailShakerSortComplexity.pdf', format = 'pdf', bbox_inches='tight')
