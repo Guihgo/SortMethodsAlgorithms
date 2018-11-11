@@ -207,6 +207,6 @@ void quickSort(int arr[], int menor, int maior)
     { 
         int partIndex = partition(arr, menor, maior); 
         quickSort(arr, menor, partIndex - 1); 
-        quickSort(arr, partIndex + 1, maior--); 
+        quickSort(arr, partIndex + 1, maior - 1); 
     } 
 } 
