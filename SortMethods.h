@@ -79,27 +79,28 @@ void shellSort(int *A, int n){
 
 void bubbleSort(int A[], int n){
     int aux,i,j;
-    int cont = 0, trocas = 0;
+    int ncomp = 0, ntrocas = 0;
     for(i = 1; i < n; i++){
         for(j = 0; j < n - 1; j++){
-            cont++;
+            ncomp++;
             if(A[j] > A[j+1]){
                 aux = A[j];
                 A[j] = A[j+1];
                 A[j+1] = aux;
-                trocas++;
+                ntrocas++;
             }
         }
     }
-    printf("Comparacoes: %d\n", cont);
-    printf("Trocas: %d\n", trocas);
+    // printf("Comparacoes: %d\n", ncomp);
+    // printf("Trocas: %d\n", ntrocas);
 }
 
 void selection_sort(int v[], int n){
-    int menor = 0, i=0,j=0, temp=0, ntrocas = 0;
+    int menor = 0, i=0,j=0, temp=0, ntrocas = 0, ncomp = 0;
     for(i = 0; i < n - 1 ; i++){
         menor = i;
         for(j = i + 1; j < n; j++){
+            ncomp++;
             if(v[j] < v[menor]){
                 menor = j;
             }
