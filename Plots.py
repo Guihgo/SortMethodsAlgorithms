@@ -3,6 +3,8 @@ import matplotlib
 import numpy as np
 print('Imports OK')
 
+##IMPORTANTE
+#COLOCAR ESSE N COM BASE NO TAMANHO DO VETOR INFORMADO PELO USUARIO
 n = 100
 x = np.arange(0, n+1)
 x
@@ -42,11 +44,11 @@ plt.ylabel('Operacoes realizadas')
 plt.savefig('/Users/joaomarcelo/Desktop/temp/BubbleSortComplexity.pdf', format = 'pdf')
 
 
-plt.title('Shell Sort Complexidade')
+
 #The best case ∊ Theta(nlogn):
 #The worst case ∊ theta(n*(logn)^2):
 #The avg case ∊ theta(n*(logn)^2):
-
+plt.title('Shell Sort Complexidade')
 limiteInfMedioPiorCaso, = plt.plot(x, 0.5*inf*(x*(np.log10(x)**2)), 'b-', label = 'Limite Inferior Medio e Pior caso')
 limiteSupMedioPiorCaso, = plt.plot(x, sup*(x*(np.log10(x)**2)), 'g-', label = 'Limite Superior Medio e Pior caso')
 melhorCaso, = plt.plot(x, (x*np.log10(x)), 'r-', label = 'Melhor Caso')
