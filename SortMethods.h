@@ -14,12 +14,14 @@ void cocktailShakerSort(int *A, int n){
     int i, j; 
     bool swapped = true;
     int ntrocas = 0;
+    int ncomp = 0;
     int end = n - 1;
     int temp1, temp2;
     while(swapped){
         swapped = false;
 
         for(i = 0; i < end; i++){
+            ncomp++;
             if(A[i] > A[i+1]){
                 temp1 = A[i];
                 A[i] = A[i + 1];
