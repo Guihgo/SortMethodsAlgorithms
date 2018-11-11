@@ -52,6 +52,7 @@ void cocktailShakerSort(int *A, int n){
 }
 
 void shellSort(int *A, int n){
+    // TODO: NUMERO DE TROCAS E COMPARACOES
     int h = n/2;
     int key;
 
@@ -113,6 +114,7 @@ void selection_sort(int v[], int n){
 }
 
 void insertion_sort_asc(int v[], int n){
+    // TODO: NUMERO DE TROCAS E COMPARACOES
     int i, j, key, count = 0;
     for(i = 1; i < n; i++){
         key = v[i];
@@ -128,6 +130,7 @@ void insertion_sort_asc(int v[], int n){
 }
 
 void insertion_sort_desc(int *v, int n){
+    // TODO: NUMERO DE TROCAS E COMPARACOES
     int i,j, key, count = 0;
     for(i = 1; i < n; i++){
         key = v[i];
@@ -170,6 +173,7 @@ void merge(int *A,int i1,int j1,int i2,int j2)
 
 void mergeSort(int a[],int i,int j)
 {
+    // TODO: NUMERO DE TROCAS E COMPARACOES
     int mid;
         
     if(i<j){
@@ -181,7 +185,8 @@ void mergeSort(int a[],int i,int j)
 }
 
 int partition (int A[], int menor, int maior) 
-{ 
+{   
+    // TODO: NUMERO DE TROCAS E COMPARACOES
     int pivot = A[maior];    // pivo
     int i = (menor - 1);  // menor elemento
     int temp, temp2;
@@ -205,6 +210,7 @@ int partition (int A[], int menor, int maior)
 
 void quickSort(int arr[], int menor, int maior) 
 { 
+    // TODO: NUMERO DE TROCAS E COMPARACOES
     if (menor < maior) 
     { 
         int partIndex = partition(arr, menor, maior); 
