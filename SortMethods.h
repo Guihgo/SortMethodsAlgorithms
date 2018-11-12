@@ -11,7 +11,7 @@ void printaVetor(int *A, int n){
 }
 
 void cocktailShakerSort(int *A, int n){
-    int i, j; 
+    int i, j;
     bool swapped = true;
     int ntrocas = 0;
     int ncomp = 0;
@@ -144,12 +144,12 @@ void insertion_sort_desc(int *v, int n){
 }
 void merge(int *A,int i1,int j1,int i2,int j2)
 {
-    int temp[(j2*2) - 1]; 
+    int temp[(j2*2) - 1];
     int i,j,k;
     i=i1;    //inicio do primeiro vetor
     j=i2;    //inicio do segundo vetor
     k=0;
-    
+
     while(i<=j1 && j<=j2)    //Enquanto ha elementos nos dois vetores
     {
         if(A[i]<A[j])
@@ -157,64 +157,64 @@ void merge(int *A,int i1,int j1,int i2,int j2)
         else
             temp[k++]=A[j++];
     }
-    
+
     while(i<=j1)    //Copia elementos que sobraram do primeiro vetor
         temp[k++]=A[i++];
-        
+
     while(j<=j2)    //Copia elementos que sobraram do segundo vetor
         temp[k++]=A[j++];
-        
+
     //Transefere elementos de temp de volta para o A
     for(i=i1,j=0;i<=j2;i++,j++){
         A[i]=temp[j];
     }
-        
+
 }
 
 void mergeSort(int a[],int i,int j)
 {
     // TODO: NUMERO DE TROCAS E COMPARACOES
     int mid;
-        
+
     if(i<j){
         mid=(i+j)/2;
         mergeSort(a,i,mid);        //recursao a esquerda
         mergeSort(a,mid+1,j);    //recursao a direita
-        merge(a,i,mid,mid+1,j);    //juntando os dois vetores 
+        merge(a,i,mid,mid+1,j);    //juntando os dois vetores
     }
 }
 
-int partition (int A[], int menor, int maior) 
-{   
+int partition (int A[], int menor, int maior)
+{
     // TODO: NUMERO DE TROCAS E COMPARACOES
     int pivot = A[maior];    // pivo
     int i = (menor - 1);  // menor elemento
     int temp, temp2;
-    for (int j = menor; j <= maior - 1; j++) 
-    { 
-        // Se o elemento atual e menor igual ao pivot 
-        if (A[j] <= pivot) 
-        { 
+    for (int j = menor; j <= maior - 1; j++)
+    {
+        // Se o elemento atual e menor igual ao pivot
+        if (A[j] <= pivot)
+        {
             i++;    //aumenta index do menor elemento
             temp = A[i];
             A[i] = A[j];
             A[j] = temp;
-        } 
-    } 
+        }
+    }
     temp2 = A[i+1];
     A[i+1] = A[maior];
     A[maior] = temp2;
 
-    return (i + 1); 
-} 
+    return (i + 1);
+}
 
-void quickSort(int arr[], int menor, int maior) 
-{ 
+void quickSort(int arr[], int menor, int maior)
+{
     // TODO: NUMERO DE TROCAS E COMPARACOES
-    if (menor < maior) 
-    { 
-        int partIndex = partition(arr, menor, maior); 
-        quickSort(arr, menor, partIndex - 1); 
-        quickSort(arr, partIndex + 1, maior - 1); 
-    } 
-} 
+    if (menor < maior)
+    {
+        int partIndex = partition(arr, menor, maior);
+        quickSort(arr, menor, partIndex - 1);
+        quickSort(arr, partIndex + 1, maior - 1);
+    }
+}

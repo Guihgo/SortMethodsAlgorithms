@@ -1,0 +1,35 @@
+{
+  "name": "sortmethodsalgorithms",
+  "version": "1.0.0",
+  "description": "sort methods comparison",
+  "bin": "./app.js",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmtzt/SortMethodsAlgorithms.git"
+  },
+  "keywords": [
+    "sort",
+    "methods",
+    "comparsion"
+  ],
+  "author": "Guihgo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jmtzt/SortMethodsAlgorithms/issues"
+  },
+  "homepage": "https://github.com/jmtzt/SortMethodsAlgorithms#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "opn": "^5.4.0"
+  },
+  "devDependencies": {
+    "atomicreact": "^1.1.2"
+  },
+  "pkg": {
+    "assets": "public/**/*"
+  }
+}

@@ -1,0 +1,6 @@
+[data-atomic-key="Number"] {
+  margin-top: 10px;
+}
+[data-atomic-key="Number"] > [data-atomic-sub="number"]{
+  font-size: 1.2em;
+}
