@@ -1,6 +1,18 @@
+[data-atomic-key="Graphic"] {
+  margin-top: 25px;
+}
+[data-atomic-key="Graphic"] > .title {
+  margin-left: 25px;
+}
 [data-atomic-key="Number"] {
   margin-top: 10px;
 }
 [data-atomic-key="Number"] > [data-atomic-sub="number"]{
   font-size: 1.2em;
+}
+[data-atomic-key="ResTable"] .center {
+  text-align: center;
+}
+[data-atomic-key="Result"] {
+  margin-top: 25px;
 }

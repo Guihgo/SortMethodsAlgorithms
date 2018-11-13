@@ -8,7 +8,14 @@ module.exports.onRender = function(atom){
     if(inputNumber.value=="") {return alert('Você deve digitar um número para adiciona-lô')}
     Atomic.add(atom, 'Number', [{key:'number', value: inputNumber.value}]);
     inputNumber.value = "";
+    inputNumber.focus();
   };
+
+  inputNumber.onkeypress = function(e){
+    if(e.charCode==13) {
+      btnAdd.onclick();
+    }
+  }
 }
 
 module.exports.onAdded = function(atomAdded, atom){

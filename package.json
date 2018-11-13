@@ -27,7 +27,7 @@
     "opn": "^5.4.0"
   },
   "devDependencies": {
-    "atomicreact": "^1.1.2"
+    "atomicreact": "^1.1.3"
   },
   "pkg": {
     "assets": "public/**/*"
