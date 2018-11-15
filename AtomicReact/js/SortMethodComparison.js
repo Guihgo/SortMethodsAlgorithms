@@ -41,7 +41,7 @@ module.exports.doMethod = function(methodName){
 
   let methodReturn = {};
   let array = this.getArray();
-  var Atom = Atomic.getAtom(this.atomicKey);
+  let Atom = Atomic.getAtom(this.atomicKey);
 
   let timeInitial = performance.now();
 
@@ -170,7 +170,7 @@ module.exports.cocktailShaker = function(arr, n){
     return {comparisons: n_comparacoes, swaps: n_trocas};
 }
 
-module.exports.shellSort = function(arr, n){
+module.exports.shell = function(arr, n){
     // TODO: NUMERO DE TROCAS E COMPARACOES
 
     let h = n/2;
