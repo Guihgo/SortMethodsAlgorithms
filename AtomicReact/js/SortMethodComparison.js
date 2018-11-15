@@ -80,6 +80,11 @@ module.exports.doMethod = function(methodName){
         methodReturn.graphicName = 'MergeSortComplexity.pdf';
     }
 
+    if(methodName=='Quick') {
+        methodReturn = Atom.quick(array, 0, array.length, Atomic.getAtom(this.atomicKey));
+        methodReturn.graphicName = 'QuickSortComplexity.pdf';
+    }
+
     let timeEnd = performance.now();
 
     methodReturn.time = (timeEnd-timeInitial);
@@ -172,6 +177,8 @@ module.exports.cocktailShaker = function(arr, n){
 
 module.exports.shell = function(arr, n){
     // TODO: CONFERIR TROCAS E COMPARACOES
+    var n_trocas = 0;
+    var n_comparacoes = 0;
 
     let h = n/2;
     let key;
@@ -256,6 +263,9 @@ module.exports.insertionDesc = function(arr, n){
 
 module.exports.merge = function(arr, i1, j1, i2, j2){
     // TODO: NUMERO DE TROCAS E COMPARACOES
+    let n_comparacoes = 0;
+    let n_trocas = 0;
+
     let size = (j2*2) - 1;
     let temp = Array.apply(null, Array(size)).map(function () {});
     let i,j,k;
@@ -265,6 +275,7 @@ module.exports.merge = function(arr, i1, j1, i2, j2){
 
     while(i<=j1 && j<=j2)    //Enquanto ha elementos nos dois vetores
     {
+        n_comparacoes = n_comparacoes+1;
         if(arr[i] < arr[j])
             temp[k++] = arr[i++];
         else
@@ -285,13 +296,14 @@ module.exports.merge = function(arr, i1, j1, i2, j2){
 
 module.exports.mergeSort = function(arr, i, j, Atom){
     // TODO: NUMERO DE TROCAS E COMPARACOES
-    console.log(Atom);
+    let n_comparacoes = 0;
+    let n_trocas = 0;
     let mid;
 
     if(i<j){
         mid=(i+j)/2;
-        Atom.mergeSort(arr,mid);        //recursao a esquerda
-        Atom.mergeSort(arr,mid+1,j);    //recursao a direita
+        let returnRecEsquerda = Atom.mergeSort(arr,i,mid, Atom);        //recursao a esquerda
+        let returnRecDireita = Atom.mergeSort(arr,mid+1,j, Atom);    //recursao a direita
         Atom.merge(arr,i,mid,mid+1,j);    //juntando os dois vetores
     }
 
@@ -299,38 +311,46 @@ module.exports.mergeSort = function(arr, i, j, Atom){
 };
 
 // TODO: QUICKSORT (E O SEU PARTITION)
-module.exports.partition = function(arr, menor, maior){   
+module.exports.partition = function(arr, menor, maior){
     // TODO: NUMERO DE TROCAS E COMPARACOES
     let n_comparacoes = 0;
     let n_trocas = 0;
     let pivot = arr[maior];    // pivo
     let i = (menor - 1);  // menor elemento
     let temp, temp2;
-    for (let j = menor; j <= maior - 1; j++) 
-    { 
-        // Se o elemento atual e menor igual ao pivot 
+    for (let j = menor; j <= maior - 1; j++)
+    {
+        // Se o elemento atual e menor igual ao pivot
         n_comparacoes = n_comparacoes + 1;
-        if (arr[j] <= pivot) 
-        { 
+        if (arr[j] <= pivot)
+        {
             i++;    //aumenta index do menor elemento
             temp = arr[i];
             arr[i] = arr[j];
             arr[j] = temp;
             n_trocas = n_trocas + 1;
-        } 
-    } 
+        }
+    }
     temp2 = arr[i+1];
-    arr[i+1] = A[maior];
-    A[maior] = temp2;
+    arr[i+1] = arr[maior];
+    arr[maior] = temp2;
     n_trocas = n_trocas + 1;
-    return (i + 1); 
+    return {comparisons: n_comparacoes, swaps: n_trocas, wall: (i + 1)};
 };
 
-module.exports.quicksort = function(arr, menor, maior){
+module.exports.quick = function(arr, menor, maior, Atom){
+    let n_comparacoes = 0;
+    let n_trocas = 0;
     if(menor < maior){
-        let q = Atom.partition(arr, menor, maior);
-        Atom.quicksort(arr, menor, q - 1);
-        Atom.quicksort(arr, q + 1, maior);
+        let returnPartition = Atom.partition(arr, menor, maior);
+        let q = returnPartition.wall;
+        
+        let returnLeft = Atom.quick(arr, menor, q - 1, Atom);
+        let returnRight = Atom.quick(arr, q + 1, maior, Atom);
+
+        n_comparacoes += (returnPartition.comparisons + returnLeft.comparisons + returnRight.comparisons);
+        n_trocas += (returnPartition.swaps + returnLeft.swaps + returnRight.swaps);
     }
 
+    return {comparisons: n_comparacoes, swaps: n_trocas};
 };
