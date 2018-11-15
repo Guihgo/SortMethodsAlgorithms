@@ -259,23 +259,33 @@ module.exports.merge = function(arr, i1, j1, i2, j2){
     let size = (j2*2) - 1;
     let temp = Array.apply(null, Array(size)).map(function () {});
     let i,j,k;
+    let n_comparacoes = 0, n_trocas = 0;
     i=i1;    //inicio do primeiro vetor
     j=i2;    //inicio do segundo vetor
     k=0;
 
     while(i<=j1 && j<=j2)    //Enquanto ha elementos nos dois vetores
     {
-        if(arr[i] < arr[j])
+        n_comparacoes = n_comparacoes + 1;
+        if(arr[i] < arr[j]){
             temp[k++] = arr[i++];
-        else
+            n_trocas++;
+        }
+        else{
             temp[k++] = arr[j++];
+            n_trocas++;
+        }
     }
 
-    while(i<=j1)    //Copia elementos que sobraram do primeiro vetor
+    while(i<=j1) {   //Copia elementos que sobraram do primeiro vetor
         temp[k++] = arr[i++];
+        n_trocas = n_trocas + 1;
+    }
 
-    while(j<=j2)    //Copia elementos que sobraram do segundo vetor
+    while(j<=j2){    //Copia elementos que sobraram do segundo vetor
         temp[k++] = arr[j++];
+        n_trocas++;
+    }
 
     //Transefere elementos de temp de volta para o A
     for(i=i1,j=0;i<=j2;i++,j++){
