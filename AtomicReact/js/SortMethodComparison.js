@@ -202,6 +202,7 @@ module.exports.shell = function(arr, n){
             }
             arr[j] = key;
         }
+        console.log('teste');
     }while(h != 1);
 
     return {comparisons: n_comparacoes, swaps: n_trocas};
@@ -344,7 +345,7 @@ module.exports.quick = function(arr, menor, maior, Atom){
     if(menor < maior){
         let returnPartition = Atom.partition(arr, menor, maior);
         let q = returnPartition.wall;
-        
+
         let returnLeft = Atom.quick(arr, menor, q - 1, Atom);
         let returnRight = Atom.quick(arr, q + 1, maior, Atom);
 
