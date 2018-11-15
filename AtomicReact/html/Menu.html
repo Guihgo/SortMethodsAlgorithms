@@ -1,8 +1,16 @@
 <div>
   <Array atomic.sub="array"></Array>
-  Compara <Method props.methodName="Método 1"></Method>
-  com
-  <Method props.methodName="Método 2"></Method>
+  <Dropdown atomic.sub="method" props.what="Escolha um método">
+    <a class="dropdown-item" href="#">Bubble</a>
+    <a class="dropdown-item" href="#">CocktailShaker</a>
+    <a class="dropdown-item" href="#">Insertion Asc</a>
+    <a class="dropdown-item" href="#">Insertion Desc</a>
+    <a class="dropdown-item" href="#">Merge</a>
+    <a class="dropdown-item" href="#">Selection</a>
+    <a class="dropdown-item" href="#">Shell</a>
+    <a class="dropdown-item" href="#">Quick</a>
+  </Dropdown>
   <br>
   <button atomic.sub="btnComparar" style="margin-top: 15px;" type="button" class="btn btn-primary btn-lg btn-block">COMPARAR</button>
+  <button atomic.sub="btnLimpar" style="margin-top: 15px;" type="button" class="btn btn-danger btn-md btn-block">LIMPAR RESULTADOS</button>
 </div>

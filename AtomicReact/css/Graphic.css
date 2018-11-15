@@ -1,0 +1,6 @@
+[data-atomic-key="Graphic"] {
+  margin-top: 25px;
+}
+[data-atomic-key="Graphic"] > .title {
+  margin-left: 25px;
+}

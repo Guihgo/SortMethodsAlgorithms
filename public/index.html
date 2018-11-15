@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sort Methods Comparison</title>
+    <title>Comparação de Métodos de Classificação</title>
     <script src="./AtomicReactBundle/atomicreact.core.js" charset="utf-8"></script>
     <script src="./AtomicReactBundle/atomicreact.bundle.js" charset="utf-8"></script>
     <link rel="stylesheet" href="./AtomicReactBundle/atomicreact.bundle.css">
@@ -14,15 +14,41 @@
     <link rel="stylesheet" href="./libs/bootstrap.min.css">
 
     <style>
-      body {
+      html, body {
+        height: 100%;
         margin: 0;
+      }
+      body {
+        margin: 25px auto 0px auto;
+        min-height:100%;
+      }
+      .container {
+        min-height: 100% !important;
+        margin-bottom: -50px !important;
+      }
+      .footer,
+      .push {
+        height: 50px;
+      }
+      .footer {
+        color: #FFF;
+        background: #1e1e1e;
+        padding: 20px;
+        text-align: center;
+      }
+      .footer a, .footer a:hover, .footer a:visited, .footer a:active {
+        color: #FF0;
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <h2>Sort Methods Comparison</h2>
+      <h2>Métodos de Classificação</h2>
       <SortMethodComparison></SortMethodComparison>
+      <div class="push"></div>
+    </div>
+    <div class="footer">
+      App feito com <span style="color: #F00;">♥️</span> utilizando <a target="_blank" href="https://www.github.com/Guihgo/AtomicReact">AtomicReact</a>
     </div>
   </body>
 </html>
