@@ -256,8 +256,7 @@ module.exports.insertionDesc = function(arr, n){
 
 module.exports.merge = function(arr, i1, j1, i2, j2){
     // TODO: NUMERO DE TROCAS E COMPARACOES
-    let size = (j2*2) - 1;
-    let temp = Array.apply(null, Array(size)).map(function () {});
+    let temp = [];
     let i,j,k;
     let n_comparacoes = 0, n_trocas = 0;
     i=i1;    //inicio do primeiro vetor
